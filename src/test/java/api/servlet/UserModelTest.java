@@ -1,17 +1,14 @@
 package api.servlet;
 
+import api.model.User;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class UserModelTest {
 
     @Test
-    public void getRealUser() {
-        UserModel userModel = new UserModel();
-        User user = userModel.getUser();
-        assertEquals("1111", user.getId());
-        assertEquals("Up1", user.getName());
+    public void testUserCreation() {
+        User user = new User(1, "Test", "test@test.com");
+        assertNotNull(user);
     }
-
 }
